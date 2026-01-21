@@ -1,0 +1,45 @@
+﻿// See https://aka.ms/new-console-template for more information
+using System.Globalization;
+
+Console.InputEncoding = System.Text.Encoding.UTF8;
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+Console.WriteLine("Робота з List та Stack Generic!");
+
+//ArrayList - зберігає список елементів, будь-які типи object
+//Використання ArrayList - має дуже багато проблеми, не рекомендовано його використовувати
+
+//System.Collections.Generic - простір імен, який містить Generic колекції
+//Generic - узагальнений (тільки певний тип), параметризований тип
+//параметризований тип - це конкретно задний при створенні колекції тип
+List<float> listInt = new (); //створли набір цілих чисел
+                            //List<int> listInt = new List<int>(); //старий синтаксис
+Console.WriteLine("Вкажіть Вік ваших тварин (exit - вихід):");
+int number = 1;
+while(true)
+{
+    Console.Write($"{number}: -> ");
+    string str = Console.ReadLine() ?? ""; //if(Console.ReadLine() == null) str = "";
+    str = str.Replace(',', '.'); //замінити кому на крапку
+    //Якщо людина пише Exit, то буде exit    
+    if (str.ToLower() == "exit" || str == "") 
+        break; //вихід з циклу
+    float age = float.Parse(str, new CultureInfo("en"));
+    listInt.Add(age); //додати елемент в кінець списку
+    number++; //щоб збільшити номер тварини
+}
+
+///як пишуться дробові числа в різних культурах
+///Україна - 3,4
+///США - 3.4 en
+///Німеччина - 3,4
+///OAЕ - 3.4
+
+Console.WriteLine("Вік ваших тварин");
+float summ = 0.0F;
+foreach(float age in listInt)
+{
+    Console.WriteLine($"- {age} років");
+    summ += age;
+}
+float average = summ / listInt.Count;
+Console.WriteLine($"Середій вік тварин: {average}");

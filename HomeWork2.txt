@@ -1,0 +1,78 @@
+Модифікувати код класної роботи, але з використанням 
+SortedList
+
+using System.Collections;
+using System.Text;
+
+Console.InputEncoding = Encoding.UTF8;
+Console.OutputEncoding = Encoding.UTF8;
+Console.WriteLine("--Робота з Stack and SortedList--");
+
+//Спеціальний клас для зберігання
+//набору елементів - із бібліотеки System.Collections
+//Ознаки - Це масив, може зберігати усі види даних
+//Набір даних працює по принципу - Перший прийшов - останій пішов
+//У цей масив можна додавати елементи і можна їх видаляти
+//Особливість даного масиву у тому, що елемент видаляється останій, 
+//який потрапив у масив
+/*
+Stack myStack = new Stack();
+myStack.Push(12); //Додали 1 елемент 
+myStack.Push(18); // 2 елемент
+myStack.Push(34); // 3 елемент
+myStack.Push(-6);
+myStack.Push("Барсик");
+
+Console.WriteLine($"Кількість елементів у Stack {myStack.Count}");
+//Отримуємо елементи із Stack
+var item =  myStack.Pop(); //Останій елемент, який був доданий, і видаляє його
+Console.WriteLine($"Отримує елент із стеку {item}");
+Console.WriteLine($"Кількість елементів після видалення {myStack.Count}");
+*/
+
+
+int action = 0;
+Stack example = new Stack();
+do
+{
+    Console.WriteLine("0.Вихід");
+    Console.WriteLine("1.Додати елемент");
+    Console.WriteLine("2.Видалити");
+    Console.WriteLine("3.Показати кількість");
+    Console.Write("->_");
+    action = int.Parse(Console.ReadLine());
+    switch(action)
+    {
+        case 1:
+            {
+                while(true)
+                {
+                    Console.WriteLine("Вкажіть значення(пустий рядок вихід):");
+                    string item = Console.ReadLine();
+                    if (string.IsNullOrEmpty(item))
+                        break; //якщо пустий рядок виходимо
+                    example.Push(item);
+                }
+                break;
+            }
+        case 2:
+            {
+                if(example.Count == 0)
+                {
+                    Console.WriteLine("--Стек пустий--");
+                    break;
+                }
+                var removeItem = example.Pop();
+                Console.WriteLine($"Це елемент покинув чат {removeItem}");
+                break;
+            }
+        case 3:
+            {
+                Console.WriteLine($"Загальна кількість елементів {example.Count}");
+                break;
+            }
+    }
+
+} while (action!=0);
+
+
