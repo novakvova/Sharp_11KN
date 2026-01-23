@@ -1,3 +1,5 @@
 1.Простір імен System.Collections. Робота із колекціями ArrayList.Базовий тип Object. Анонімні типи даних var.
 2.Простір імен System.Collections. Колекція Stack, SortedList. Приклади використання. 
-3.Простір імен System.Collections.Generic. Колекція List та Stack. Приклади використання. 
+3.Простір імен System.Collections.Generic. Колекція List та Stack. Приклади використання.
+4.Створення найпростішого графічного інтерфейсу Windows Form. Кнопки та MessageBox
+
