@@ -2,4 +2,6 @@
 2.Простір імен System.Collections. Колекція Stack, SortedList. Приклади використання. 
 3.Простір імен System.Collections.Generic. Колекція List та Stack. Приклади використання.
 4.Створення найпростішого графічного інтерфейсу Windows Form. Кнопки та MessageBox
+5.Розробка калькулятора за допомогою Windows Forms. Button, Input, Label.
+6.Взаємодія з елементами керування на формі. Зміна стану Button, Input та Label.
 
