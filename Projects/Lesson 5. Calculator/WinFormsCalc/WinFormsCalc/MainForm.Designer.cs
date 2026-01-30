@@ -60,6 +60,7 @@
             btnPlus.Text = "➕";
             btnPlus.TextAlign = ContentAlignment.TopCenter;
             btnPlus.UseVisualStyleBackColor = true;
+            btnPlus.Click += btnPlus_Click;
             // 
             // btnMinus
             // 
@@ -71,6 +72,7 @@
             btnMinus.Text = "➖";
             btnMinus.TextAlign = ContentAlignment.TopCenter;
             btnMinus.UseVisualStyleBackColor = true;
+            btnMinus.Click += btnMinus_Click;
             // 
             // btnMnozemiy
             // 
@@ -173,41 +175,41 @@
             // 
             // btn6
             // 
-            this.btn6.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            this.btn6.ForeColor = Color.Magenta;
-            this.btn6.Location = new Point(214, 239);
-            this.btn6.Name = "btn6";
-            this.btn6.Size = new Size(71, 56);
-            this.btn6.TabIndex = 6;
-            this.btn6.Text = "6";
-            this.btn6.TextAlign = ContentAlignment.TopCenter;
-            this.btn6.UseVisualStyleBackColor = true;
+            btn6.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btn6.ForeColor = Color.Magenta;
+            btn6.Location = new Point(214, 239);
+            btn6.Name = "btn6";
+            btn6.Size = new Size(71, 56);
+            btn6.TabIndex = 6;
+            btn6.Text = "6";
+            btn6.TextAlign = ContentAlignment.TopCenter;
+            btn6.UseVisualStyleBackColor = true;
             btn6.Click += btn1_Click;
             // 
             // btn7
             // 
-            this.btn7.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            this.btn7.ForeColor = Color.Magenta;
-            this.btn7.Location = new Point(32, 171);
-            this.btn7.Name = "btn7";
-            this.btn7.Size = new Size(71, 56);
-            this.btn7.TabIndex = 6;
-            this.btn7.Text = "7";
-            this.btn7.TextAlign = ContentAlignment.TopCenter;
-            this.btn7.UseVisualStyleBackColor = true;
+            btn7.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btn7.ForeColor = Color.Magenta;
+            btn7.Location = new Point(32, 171);
+            btn7.Name = "btn7";
+            btn7.Size = new Size(71, 56);
+            btn7.TabIndex = 6;
+            btn7.Text = "7";
+            btn7.TextAlign = ContentAlignment.TopCenter;
+            btn7.UseVisualStyleBackColor = true;
             btn7.Click += btn1_Click;
             // 
             // btn8
             // 
-            this.btn8.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            this.btn8.ForeColor = Color.Magenta;
-            this.btn8.Location = new Point(122, 171);
-            this.btn8.Name = "btn8";
-            this.btn8.Size = new Size(71, 56);
-            this.btn8.TabIndex = 6;
-            this.btn8.Text = "8";
-            this.btn8.TextAlign = ContentAlignment.TopCenter;
-            this.btn8.UseVisualStyleBackColor = true;
+            btn8.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btn8.ForeColor = Color.Magenta;
+            btn8.Location = new Point(122, 171);
+            btn8.Name = "btn8";
+            btn8.Size = new Size(71, 56);
+            btn8.TabIndex = 6;
+            btn8.Text = "8";
+            btn8.TextAlign = ContentAlignment.TopCenter;
+            btn8.UseVisualStyleBackColor = true;
             btn8.Click += btn1_Click;
             // 
             // btn9
@@ -259,6 +261,7 @@
             btnB.Text = "<-";
             btnB.TextAlign = ContentAlignment.TopCenter;
             btnB.UseVisualStyleBackColor = true;
+            btnB.Click += btnB_Click;
             // 
             // btnC
             // 
@@ -271,6 +274,7 @@
             btnC.Text = "C";
             btnC.TextAlign = ContentAlignment.TopCenter;
             btnC.UseVisualStyleBackColor = true;
+            btnC.Click += btnC_Click;
             // 
             // btnVidsotok
             // 
