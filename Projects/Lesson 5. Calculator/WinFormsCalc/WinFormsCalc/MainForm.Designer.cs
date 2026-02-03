@@ -107,6 +107,7 @@
             btnResult.Text = "\U0001f7f0";
             btnResult.TextAlign = ContentAlignment.TopCenter;
             btnResult.UseVisualStyleBackColor = true;
+            btnResult.Click += btnResult_Click;
             // 
             // btn1
             // 
