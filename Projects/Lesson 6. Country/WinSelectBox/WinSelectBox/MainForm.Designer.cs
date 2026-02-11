@@ -35,6 +35,7 @@
             pbImage = new PictureBox();
             txtImagePath = new TextBox();
             label2 = new Label();
+            btnSelectImage = new Button();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             SuspendLayout();
             // 
@@ -107,11 +108,22 @@
             label2.TabIndex = 1;
             label2.Text = "Прапор країни";
             // 
+            // btnSelectImage
+            // 
+            btnSelectImage.Location = new Point(752, 23);
+            btnSelectImage.Name = "btnSelectImage";
+            btnSelectImage.Size = new Size(112, 53);
+            btnSelectImage.TabIndex = 5;
+            btnSelectImage.Text = "Пошук";
+            btnSelectImage.UseVisualStyleBackColor = true;
+            btnSelectImage.Click += btnSelectImage_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(876, 450);
+            Controls.Add(btnSelectImage);
             Controls.Add(pbImage);
             Controls.Add(cbCountries);
             Controls.Add(btnAdd);
@@ -135,5 +147,6 @@
         private PictureBox pbImage;
         private TextBox txtImagePath;
         private Label label2;
+        private Button btnSelectImage;
     }
 }
