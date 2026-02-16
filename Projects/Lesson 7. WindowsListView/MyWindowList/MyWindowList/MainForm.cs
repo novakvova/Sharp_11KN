@@ -22,5 +22,10 @@ namespace MyWindowList
             ContactForm contactForm = new ContactForm();
             contactForm.ShowDialog();
         }
+
+        private void mFileExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

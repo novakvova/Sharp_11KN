@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             btnContactView = new Button();
+            mHeadMenu = new MenuStrip();
+            mHeadMenuFile = new ToolStripMenuItem();
+            mFileExit = new ToolStripMenuItem();
+            mHeadMenu.SuspendLayout();
             SuspendLayout();
             // 
             // btnContactView
@@ -41,19 +45,52 @@
             btnContactView.UseVisualStyleBackColor = true;
             btnContactView.Click += btnContactView_Click;
             // 
+            // mHeadMenu
+            // 
+            mHeadMenu.ImageScalingSize = new Size(24, 24);
+            mHeadMenu.Items.AddRange(new ToolStripItem[] { mHeadMenuFile });
+            mHeadMenu.Location = new Point(0, 0);
+            mHeadMenu.Name = "mHeadMenu";
+            mHeadMenu.Size = new Size(800, 33);
+            mHeadMenu.TabIndex = 1;
+            mHeadMenu.Text = "menuStrip1";
+            // 
+            // mHeadMenuFile
+            // 
+            mHeadMenuFile.DropDownItems.AddRange(new ToolStripItem[] { mFileExit });
+            mHeadMenuFile.Name = "mHeadMenuFile";
+            mHeadMenuFile.Size = new Size(54, 29);
+            mHeadMenuFile.Text = "File";
+            // 
+            // mFileExit
+            // 
+            mFileExit.Name = "mFileExit";
+            mFileExit.ShortcutKeys = Keys.Control | Keys.X;
+            mFileExit.Size = new Size(270, 34);
+            mFileExit.Text = "Вихід";
+            mFileExit.Click += mFileExit_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnContactView);
+            Controls.Add(mHeadMenu);
+            MainMenuStrip = mHeadMenu;
             Name = "MainForm";
             Text = "Головне вікно";
+            mHeadMenu.ResumeLayout(false);
+            mHeadMenu.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnContactView;
+        private MenuStrip mHeadMenu;
+        private ToolStripMenuItem mHeadMenuFile;
+        private ToolStripMenuItem mFileExit;
     }
 }
