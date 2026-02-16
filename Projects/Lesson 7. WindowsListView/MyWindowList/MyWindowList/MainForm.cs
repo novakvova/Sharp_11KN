@@ -27,5 +27,12 @@ namespace MyWindowList
         {
             Application.Exit();
         }
+
+        private void mHelpContacts_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.ShowDialog();
+
+        }
     }
 }

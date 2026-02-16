@@ -32,14 +32,17 @@
             mHeadMenu = new MenuStrip();
             mHeadMenuFile = new ToolStripMenuItem();
             mFileExit = new ToolStripMenuItem();
+            mHelp = new ToolStripMenuItem();
+            mHelpContacts = new ToolStripMenuItem();
             mHeadMenu.SuspendLayout();
             SuspendLayout();
             // 
             // btnContactView
             // 
             btnContactView.Location = new Point(31, 48);
+            btnContactView.Margin = new Padding(2);
             btnContactView.Name = "btnContactView";
-            btnContactView.Size = new Size(152, 73);
+            btnContactView.Size = new Size(152, 72);
             btnContactView.TabIndex = 0;
             btnContactView.Text = "Контакти";
             btnContactView.UseVisualStyleBackColor = true;
@@ -48,7 +51,7 @@
             // mHeadMenu
             // 
             mHeadMenu.ImageScalingSize = new Size(24, 24);
-            mHeadMenu.Items.AddRange(new ToolStripItem[] { mHeadMenuFile });
+            mHeadMenu.Items.AddRange(new ToolStripItem[] { mHeadMenuFile, mHelp });
             mHeadMenu.Location = new Point(0, 0);
             mHeadMenu.Name = "mHeadMenu";
             mHeadMenu.Size = new Size(800, 33);
@@ -66,9 +69,24 @@
             // 
             mFileExit.Name = "mFileExit";
             mFileExit.ShortcutKeys = Keys.Control | Keys.X;
-            mFileExit.Size = new Size(270, 34);
+            mFileExit.Size = new Size(218, 34);
             mFileExit.Text = "Вихід";
             mFileExit.Click += mFileExit_Click;
+            // 
+            // mHelp
+            // 
+            mHelp.DropDownItems.AddRange(new ToolStripItem[] { mHelpContacts });
+            mHelp.Name = "mHelp";
+            mHelp.Size = new Size(65, 29);
+            mHelp.Text = "Help";
+            // 
+            // mHelpContacts
+            // 
+            mHelpContacts.Name = "mHelpContacts";
+            mHelpContacts.ShortcutKeys = Keys.Control | Keys.M;
+            mHelpContacts.Size = new Size(270, 34);
+            mHelpContacts.Text = "Contacts";
+            mHelpContacts.Click += mHelpContacts_Click;
             // 
             // MainForm
             // 
@@ -78,6 +96,7 @@
             Controls.Add(btnContactView);
             Controls.Add(mHeadMenu);
             MainMenuStrip = mHeadMenu;
+            Margin = new Padding(2);
             Name = "MainForm";
             Text = "Головне вікно";
             mHeadMenu.ResumeLayout(false);
@@ -92,5 +111,7 @@
         private MenuStrip mHeadMenu;
         private ToolStripMenuItem mHeadMenuFile;
         private ToolStripMenuItem mFileExit;
+        private ToolStripMenuItem mHelp;
+        private ToolStripMenuItem mHelpContacts;
     }
 }
