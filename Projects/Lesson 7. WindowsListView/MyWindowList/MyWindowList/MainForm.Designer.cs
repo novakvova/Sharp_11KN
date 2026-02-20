@@ -69,7 +69,7 @@
             // 
             mFileExit.Name = "mFileExit";
             mFileExit.ShortcutKeys = Keys.Control | Keys.X;
-            mFileExit.Size = new Size(218, 34);
+            mFileExit.Size = new Size(270, 34);
             mFileExit.Text = "Вихід";
             mFileExit.Click += mFileExit_Click;
             // 
@@ -99,6 +99,7 @@
             Margin = new Padding(2);
             Name = "MainForm";
             Text = "Головне вікно";
+            FormClosing += MainForm_FormClosing;
             mHeadMenu.ResumeLayout(false);
             mHeadMenu.PerformLayout();
             ResumeLayout(false);

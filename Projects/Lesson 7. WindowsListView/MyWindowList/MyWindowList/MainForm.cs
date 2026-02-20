@@ -34,5 +34,15 @@ namespace MyWindowList
             contactForm.ShowDialog();
 
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("Ви дійсно хочете вийти?",
+                "Підтвердіть операцію", MessageBoxButtons.YesNo);
+            if(result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

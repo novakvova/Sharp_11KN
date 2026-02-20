@@ -133,6 +133,7 @@
             Controls.Add(label1);
             Controls.Add(pbImage);
             Name = "ContactForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Контакти";
             Load += ContactForm_Load;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
