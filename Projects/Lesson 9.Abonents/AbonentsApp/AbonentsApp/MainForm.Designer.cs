@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             btnCreateAbontent = new Button();
+            dgvAbontnts = new DataGridView();
+            ColFullName = new DataGridViewTextBoxColumn();
+            ColPhone = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvAbontnts).BeginInit();
             SuspendLayout();
             // 
             // btnCreateAbontent
@@ -41,19 +45,53 @@
             btnCreateAbontent.UseVisualStyleBackColor = true;
             btnCreateAbontent.Click += btnCreateAbontent_Click;
             // 
+            // dgvAbontnts
+            // 
+            dgvAbontnts.AllowUserToAddRows = false;
+            dgvAbontnts.AllowUserToDeleteRows = false;
+            dgvAbontnts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAbontnts.Columns.AddRange(new DataGridViewColumn[] { ColFullName, ColPhone });
+            dgvAbontnts.Location = new Point(12, 191);
+            dgvAbontnts.Name = "dgvAbontnts";
+            dgvAbontnts.ReadOnly = true;
+            dgvAbontnts.RowHeadersWidth = 62;
+            dgvAbontnts.Size = new Size(1181, 412);
+            dgvAbontnts.TabIndex = 1;
+            // 
+            // ColFullName
+            // 
+            ColFullName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColFullName.HeaderText = "ПІБ";
+            ColFullName.MinimumWidth = 8;
+            ColFullName.Name = "ColFullName";
+            ColFullName.ReadOnly = true;
+            // 
+            // ColPhone
+            // 
+            ColPhone.HeaderText = "Телефон";
+            ColPhone.MinimumWidth = 8;
+            ColPhone.Name = "ColPhone";
+            ColPhone.ReadOnly = true;
+            ColPhone.Width = 200;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1205, 615);
+            Controls.Add(dgvAbontnts);
             Controls.Add(btnCreateAbontent);
             Name = "MainForm";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dgvAbontnts).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnCreateAbontent;
+        private DataGridView dgvAbontnts;
+        private DataGridViewTextBoxColumn ColFullName;
+        private DataGridViewTextBoxColumn ColPhone;
     }
 }

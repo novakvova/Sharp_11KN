@@ -61,7 +61,7 @@
             label2.Location = new Point(12, 87);
             label2.Name = "label2";
             label2.Size = new Size(122, 32);
-            label2.TabIndex = 1;
+            label2.TabIndex = 0;
             label2.Text = "Прізвище";
             // 
             // txtLastname
@@ -70,7 +70,7 @@
             txtLastname.Location = new Point(211, 87);
             txtLastname.Name = "txtLastname";
             txtLastname.Size = new Size(441, 39);
-            txtLastname.TabIndex = 2;
+            txtLastname.TabIndex = 1;
             // 
             // label3
             // 
@@ -80,7 +80,7 @@
             label3.Location = new Point(12, 157);
             label3.Name = "label3";
             label3.Size = new Size(55, 32);
-            label3.TabIndex = 1;
+            label3.TabIndex = 0;
             label3.Text = "Ім'я";
             // 
             // txtFirstname
@@ -99,7 +99,7 @@
             label4.Location = new Point(12, 216);
             label4.Name = "label4";
             label4.Size = new Size(138, 32);
-            label4.TabIndex = 1;
+            label4.TabIndex = 0;
             label4.Text = "Побатькові";
             // 
             // txtSecondname
@@ -108,7 +108,7 @@
             txtSecondname.Location = new Point(211, 216);
             txtSecondname.Name = "txtSecondname";
             txtSecondname.Size = new Size(441, 39);
-            txtSecondname.TabIndex = 2;
+            txtSecondname.TabIndex = 3;
             // 
             // label5
             // 
@@ -118,7 +118,7 @@
             label5.Location = new Point(12, 278);
             label5.Name = "label5";
             label5.Size = new Size(110, 32);
-            label5.TabIndex = 1;
+            label5.TabIndex = 0;
             label5.Text = "Телефон";
             // 
             // txtPhone
@@ -127,14 +127,14 @@
             txtPhone.Location = new Point(211, 278);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(441, 39);
-            txtPhone.TabIndex = 2;
+            txtPhone.TabIndex = 4;
             // 
             // btnCreate
             // 
             btnCreate.Location = new Point(155, 351);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(170, 59);
-            btnCreate.TabIndex = 3;
+            btnCreate.TabIndex = 5;
             btnCreate.Text = "Створити";
             btnCreate.UseVisualStyleBackColor = true;
             btnCreate.Click += btnCreate_Click;
@@ -144,7 +144,7 @@
             btnCancel.Location = new Point(420, 351);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(170, 59);
-            btnCancel.TabIndex = 3;
+            btnCancel.TabIndex = 6;
             btnCancel.Text = "Скасувати";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
