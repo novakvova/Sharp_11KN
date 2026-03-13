@@ -34,6 +34,7 @@
             dgvUsersPIB = new DataGridViewTextBoxColumn();
             dgvUsersPhone = new DataGridViewTextBoxColumn();
             dgvUsersAge = new DataGridViewTextBoxColumn();
+            btnEdit = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             SuspendLayout();
             // 
@@ -97,11 +98,24 @@
             dgvUsersAge.ReadOnly = true;
             dgvUsersAge.Width = 150;
             // 
+            // btnEdit
+            // 
+            btnEdit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnEdit.ForeColor = Color.Red;
+            btnEdit.Location = new Point(12, 12);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(191, 63);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Редагувати";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1240, 493);
+            Controls.Add(btnEdit);
             Controls.Add(dgvUsers);
             Controls.Add(btnAdd);
             Name = "MainForm";
@@ -118,5 +132,6 @@
         private DataGridViewTextBoxColumn dgvUsersPIB;
         private DataGridViewTextBoxColumn dgvUsersPhone;
         private DataGridViewTextBoxColumn dgvUsersAge;
+        private Button btnEdit;
     }
 }
