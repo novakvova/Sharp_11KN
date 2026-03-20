@@ -1,0 +1,83 @@
+Зроби відправку листів і пофіксити проблеми, які є при відравці листа
+using MailKit.Net.Smtp;
+using MimeKit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
+namespace EmailSend
+{
+    public partial class SendForm : Form
+    {
+        public SendForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("Обираємо файл");
+            //Діалог для вибору файлу
+            OpenFileDialog ofd = new OpenFileDialog();
+            //Користувач вибрав файл
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string file = ofd.FileName;
+                txtPath.Text = file;
+                //MessageBox.Show(file, "Ви обрали файл");
+            }
+
+        }
+
+        async Task MySendEmail(string subject, string body, string file)
+        {
+            //пароль для додатку
+            string password = "GYse3W0YfpmInJz5----"; //пароль у кожного свій
+                                                      //назва smtp - сервера
+            string smtpServer = "smtp.ukr.net";
+            //потр на якому працює сервер
+            int port = 2525;
+            //хто буде відправляти листи
+            string from = "super.novakvova@ukr.net"; //користувач у кожного свій
+                                                     //ім'я користувача
+            string username = from;
+
+
+            string to = "novakvova@gmail.com";
+            var bodyHtml = new TextPart("html")
+            {
+                Text = body
+            };
+            var multipart = new Multipart("mixed");
+            multipart.Add(bodyHtml);
+
+            var emailMessage = new MimeMessage();
+            emailMessage.From.Add(new MailboxAddress(from));
+            emailMessage.To.Add(new MailboxAddress(to));
+            emailMessage.Subject = subject;
+
+            emailMessage.Body = multipart;
+
+            using var client = new SmtpClient();
+            try
+            {
+                await client.ConnectAsync(smtpServer, port, true);
+                await client.AuthenticateAsync(username, password);
+                await client.SendAsync(emailMessage);
+                await client.DisconnectAsync(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error send EMAIL {0}", ex.Message);
+            }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            string subject = txtSubject.Text;
+            string body = txtBody.Text;
+            string file = txtPath.Text;
+
+            var mySend = MySendEmail(subject, body, file);
+            Task.Run(() => mySend);
+        }
+    }
+}
