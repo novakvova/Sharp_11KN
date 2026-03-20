@@ -29,7 +29,7 @@ namespace EmailSend
         async Task MySendEmail(string subject, string body, string file)
         {
             //пароль для додатку
-            string password = "Gab0HRd5oyUYa5oa--"; //пароль у кожного свій
+            string password = "Gab0HRd5oyUYa5oa"; //пароль у кожного свій
                                                       //назва smtp - сервера
             string smtpServer = "smtp.ukr.net";
             //потр на якому працює сервер
@@ -41,12 +41,20 @@ namespace EmailSend
 
 
             string to = "novakvova@gmail.com";
+
+            var attachment = new MimePart("image", "webp")
+            {
+                FileName = "Привіт друже",
+                Content = new MimeContent(File.OpenRead(file))
+            };
+
             var bodyHtml = new TextPart("html")
             {
                 Text = body
             };
             var multipart = new Multipart("mixed");
             multipart.Add(bodyHtml);
+            multipart.Add(attachment);
 
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress(from));
@@ -76,6 +84,8 @@ namespace EmailSend
             string file = txtPath.Text;
 
             await MySendEmail(subject, body, file);
+
+            MessageBox.Show("Листа успішно надіслано!");
         }
     }
 }
