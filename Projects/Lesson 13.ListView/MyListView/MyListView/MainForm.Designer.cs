@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            textBox1 = new TextBox();
+            lvExplorer = new ListView();
+            txtFolderPath = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            btnLoadData = new Button();
+            txtViewInfo = new TextBox();
             SuspendLayout();
             // 
-            // listView1
+            // lvExplorer
             // 
-            listView1.Location = new Point(48, 114);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(676, 308);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lvExplorer.Location = new Point(48, 114);
+            lvExplorer.Name = "lvExplorer";
+            lvExplorer.Size = new Size(676, 308);
+            lvExplorer.TabIndex = 0;
+            lvExplorer.UseCompatibleStateImageBehavior = false;
             // 
-            // textBox1
+            // txtFolderPath
             // 
-            textBox1.Location = new Point(48, 53);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(544, 31);
-            textBox1.TabIndex = 1;
+            txtFolderPath.Location = new Point(48, 53);
+            txtFolderPath.Name = "txtFolderPath";
+            txtFolderPath.Size = new Size(544, 31);
+            txtFolderPath.TabIndex = 1;
             // 
             // label1
             // 
@@ -58,35 +59,47 @@
             label1.TabIndex = 2;
             label1.Text = "Шлях до папки";
             // 
-            // button1
+            // btnLoadData
             // 
-            button1.Location = new Point(598, 19);
-            button1.Name = "button1";
-            button1.Size = new Size(132, 78);
-            button1.TabIndex = 3;
-            button1.Text = "Показати вміст";
-            button1.UseVisualStyleBackColor = true;
+            btnLoadData.Location = new Point(598, 19);
+            btnLoadData.Name = "btnLoadData";
+            btnLoadData.Size = new Size(132, 78);
+            btnLoadData.TabIndex = 3;
+            btnLoadData.Text = "Показати вміст";
+            btnLoadData.UseVisualStyleBackColor = true;
+            btnLoadData.Click += btnLoadData_Click;
+            // 
+            // txtViewInfo
+            // 
+            txtViewInfo.Location = new Point(749, 114);
+            txtViewInfo.Multiline = true;
+            txtViewInfo.Name = "txtViewInfo";
+            txtViewInfo.Size = new Size(445, 308);
+            txtViewInfo.TabIndex = 4;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(1221, 479);
+            Controls.Add(txtViewInfo);
+            Controls.Add(btnLoadData);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(listView1);
+            Controls.Add(txtFolderPath);
+            Controls.Add(lvExplorer);
             Name = "MainForm";
             Text = "Form1";
+            Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ListView listView1;
-        private TextBox textBox1;
+        private ListView lvExplorer;
+        private TextBox txtFolderPath;
         private Label label1;
-        private Button button1;
+        private Button btnLoadData;
+        private TextBox txtViewInfo;
     }
 }

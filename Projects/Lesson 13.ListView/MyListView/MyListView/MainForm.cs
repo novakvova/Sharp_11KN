@@ -4,7 +4,62 @@ namespace MyListView
     {
         public MainForm()
         {
+            //тут відбувається ініціалізація компонентів
             InitializeComponent();
+
+            //Вписуємо шлях до папки
+            txtFolderPath.Text = "C:\\";
+
+            lvExplorer.LargeImageList = new ImageList();
+            lvExplorer.LargeImageList.ImageSize = new Size(90, 65);
+            lvExplorer.MultiSelect = false;
+            //lvExplorer.ListViewItemSorter = new ListViewIndexComparer();
+            lvExplorer.InsertionMark.Color= Color.Green;
+            lvExplorer.AllowDrop = true;
+
+        }
+        //Буде вантажити інформацію про файлову систему
+        private void LoadingData()
+        {
+            string path = txtFolderPath.Text;
+            //Як отримати список папок в папці
+            string[] folders = Directory.GetDirectories(path);
+            string strMessage = "";
+            foreach (var folder in folders)
+            {
+                strMessage += folder + "\n";
+
+                string key = Guid.NewGuid().ToString();
+                ListViewItem item = new ListViewItem();
+                item.Tag = folder;
+                item.Text = Path.GetFileName(folder);
+                item.ImageKey = key;
+                //lvExplorer.LargeImageList.Images.Add(key, Image.FromFile(dlg.FileName));
+                lvExplorer.Items.Add(item);
+
+            }
+            //MessageBox.Show(strMessage, "Список папок");
+            txtViewInfo.Text = strMessage;
+            string[] files = Directory.GetFiles(path);
+            strMessage="";
+            foreach (var file in files)
+            {
+                strMessage+= file + "\n";
+            }
+            txtViewInfo.Text += strMessage;
+            //MessageBox.Show(strMessage, "Список файлів");
+        }
+
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            LoadingData();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //Спрацьомує коли форма завантажилася
+            LoadingData();
+
         }
     }
 }
