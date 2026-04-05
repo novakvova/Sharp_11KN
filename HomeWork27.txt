@@ -1,0 +1,63 @@
+Зробити, щоб дані із структури можна було виводити(записувати) 
+у файл.
+На 12 балів зробити, щоб у програмі можна було вводити
+інформацію про автомобілі - марка, модель, колір, та ін.
+
+// See https://aka.ms/new-console-template for more information
+using MyStruct;
+
+Console.InputEncoding = System.Text.Encoding.UTF8;
+Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+Console.WriteLine("---Робота із структурами---");
+
+//Використовується для зберігання різних типів даних в одному елементі
+//Можна сказати, що це обєднаня від однією назвою декількох змінних різного типу даних
+//Спочатку ми описуємо протопип майбутнього типу даних- який буде наш власний тип даних, який буде містити в собі різні типи даних
+
+
+//На основі структури можна створити власні змінні
+//Student vlad; // Це наш тип, який обєднує у собі 4 змінних
+
+//vlad.firstname = "Владислав"; //public вікриває доступ до зміни firstname
+//vlad.lastname = "Мельник";
+//vlad.age = 19;
+//vlad.course = 3;
+
+//Console.WriteLine("{0} {1}\nВік: {2}\tКурс: {3}", 
+//    vlad.firstname, vlad.lastname, vlad.age, vlad.course);
+
+List<Animal> animals = new List<Animal>();
+
+do
+{
+    Console.WriteLine("Вкажіть ім'я:");
+    string name = Console.ReadLine();
+    if(string.IsNullOrEmpty(name))
+        break;
+    Animal temp = new Animal();
+    temp.name = name;
+    Console.WriteLine("Вкажіть вік");
+    temp.age = int.Parse(Console.ReadLine());
+    Console.WriteLine("Вкажіть вагу:");
+    temp.weight = double.Parse(Console.ReadLine());
+    animals.Add(temp);
+
+} while(true);
+
+Console.WriteLine("Куди вивести тваринок:");
+Console.WriteLine("1.У файл");
+Console.WriteLine("2.На екран");
+Console.Write("-> ");
+int action = int.Parse(Console.ReadLine());
+if(action == 2)
+{
+    Console.WriteLine("---Список Ваших тваринок---");
+    foreach (Animal animal in animals)
+    {
+        Console.WriteLine("Ім'я: {0}\tВік: {1}\tВага: {2}",
+            animal.name, animal.age, animal.weight);
+    }
+}
+
+
