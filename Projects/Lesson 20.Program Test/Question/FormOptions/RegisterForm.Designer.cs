@@ -32,17 +32,26 @@
             label1 = new Label();
             lbQuestion = new Label();
             label2 = new Label();
-            txtFirstName = new TextBox();
             label3 = new Label();
-            txtLastName = new TextBox();
-            txtGroup = new TextBox();
             label4 = new Label();
             label5 = new Label();
+            txtName = new TextBox();
+            txtLastName = new TextBox();
             txtEmail = new TextBox();
+            txtGroup = new TextBox();
             label6 = new Label();
             txtPassword = new TextBox();
             label7 = new Label();
-            ConfigmPassword = new TextBox();
+            txtPasswordCheck = new TextBox();
+            btnSave = new Button();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            btnVissiblePassword = new Button();
+            btnCheck = new Button();
             SuspendLayout();
             // 
             // btnChangeStyles
@@ -51,10 +60,10 @@
             btnChangeStyles.FlatAppearance.BorderSize = 0;
             btnChangeStyles.FlatStyle = FlatStyle.Flat;
             btnChangeStyles.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnChangeStyles.Location = new Point(114, 453);
-            btnChangeStyles.Margin = new Padding(4, 5, 4, 5);
+            btnChangeStyles.Location = new Point(740, 7);
+            btnChangeStyles.Margin = new Padding(3, 4, 3, 4);
             btnChangeStyles.Name = "btnChangeStyles";
-            btnChangeStyles.Size = new Size(121, 58);
+            btnChangeStyles.Size = new Size(97, 46);
             btnChangeStyles.TabIndex = 0;
             btnChangeStyles.Text = "Темна";
             btnChangeStyles.UseVisualStyleBackColor = false;
@@ -65,10 +74,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(17, 463);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(663, 15);
             label1.Name = "label1";
-            label1.Size = new Size(95, 32);
+            label1.Size = new Size(79, 28);
             label1.TabIndex = 2;
             label1.Text = "ТЕМА :";
             // 
@@ -77,154 +85,277 @@
             lbQuestion.AutoSize = true;
             lbQuestion.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lbQuestion.ForeColor = Color.Black;
-            lbQuestion.Location = new Point(370, 9);
-            lbQuestion.Margin = new Padding(4, 0, 4, 0);
+            lbQuestion.Location = new Point(296, 7);
             lbQuestion.Name = "lbQuestion";
-            lbQuestion.Size = new Size(361, 41);
+            lbQuestion.Size = new Size(299, 35);
             lbQuestion.TabIndex = 3;
-            lbQuestion.Text = "Стоврити новий акаунт";
+            lbQuestion.Text = "Створити новий акаунт";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.ForeColor = Color.Blue;
-            label2.Location = new Point(17, 68);
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(31, 77);
             label2.Name = "label2";
-            label2.Size = new Size(62, 32);
-            label2.TabIndex = 4;
+            label2.Size = new Size(63, 35);
+            label2.TabIndex = 3;
             label2.Text = "Ім'я";
-            // 
-            // txtFirstName
-            // 
-            txtFirstName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtFirstName.Location = new Point(17, 112);
-            txtFirstName.Name = "txtFirstName";
-            txtFirstName.Size = new Size(489, 39);
-            txtFirstName.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label3.ForeColor = Color.Blue;
-            label3.Location = new Point(12, 173);
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(444, 77);
             label3.Name = "label3";
-            label3.Size = new Size(130, 32);
-            label3.TabIndex = 4;
+            label3.Size = new Size(136, 35);
+            label3.TabIndex = 3;
             label3.Text = "Прізвище";
-            // 
-            // txtLastName
-            // 
-            txtLastName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtLastName.Location = new Point(12, 217);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(489, 39);
-            txtLastName.TabIndex = 5;
-            // 
-            // txtGroup
-            // 
-            txtGroup.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtGroup.Location = new Point(546, 112);
-            txtGroup.Name = "txtGroup";
-            txtGroup.Size = new Size(489, 39);
-            txtGroup.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label4.ForeColor = Color.Blue;
-            label4.Location = new Point(546, 68);
+            label4.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(31, 203);
             label4.Name = "label4";
-            label4.Size = new Size(80, 32);
-            label4.TabIndex = 6;
+            label4.Size = new Size(83, 35);
+            label4.TabIndex = 3;
             label4.Text = "Група";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label5.ForeColor = Color.Blue;
-            label5.Location = new Point(546, 173);
+            label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(444, 203);
             label5.Name = "label5";
-            label5.Size = new Size(233, 32);
-            label5.TabIndex = 6;
-            label5.Text = "Електронна пошта";
+            label5.Size = new Size(95, 35);
+            label5.TabIndex = 3;
+            label5.Text = "Пошта";
+            // 
+            // txtName
+            // 
+            txtName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtName.Location = new Point(31, 129);
+            txtName.Multiline = true;
+            txtName.Name = "txtName";
+            txtName.Size = new Size(320, 43);
+            txtName.TabIndex = 4;
+            // 
+            // txtLastName
+            // 
+            txtLastName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtLastName.Location = new Point(444, 129);
+            txtLastName.Multiline = true;
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(320, 43);
+            txtLastName.TabIndex = 4;
             // 
             // txtEmail
             // 
-            txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtEmail.Location = new Point(546, 217);
+            txtEmail.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtEmail.Location = new Point(444, 260);
+            txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(489, 39);
-            txtEmail.TabIndex = 7;
+            txtEmail.Size = new Size(320, 43);
+            txtEmail.TabIndex = 4;
+            // 
+            // txtGroup
+            // 
+            txtGroup.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtGroup.Location = new Point(31, 260);
+            txtGroup.Multiline = true;
+            txtGroup.Name = "txtGroup";
+            txtGroup.Size = new Size(320, 43);
+            txtGroup.TabIndex = 4;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label6.ForeColor = Color.Blue;
-            label6.Location = new Point(12, 276);
+            label6.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(31, 329);
             label6.Name = "label6";
-            label6.Size = new Size(102, 32);
-            label6.TabIndex = 4;
+            label6.Size = new Size(107, 35);
+            label6.TabIndex = 3;
             label6.Text = "Пароль";
             // 
             // txtPassword
             // 
-            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtPassword.Location = new Point(12, 320);
+            txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtPassword.Location = new Point(31, 386);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(489, 39);
-            txtPassword.TabIndex = 5;
+            txtPassword.Size = new Size(320, 38);
+            txtPassword.TabIndex = 4;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label7.ForeColor = Color.Blue;
-            label7.Location = new Point(546, 276);
+            label7.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(444, 329);
             label7.Name = "label7";
-            label7.Size = new Size(195, 32);
-            label7.TabIndex = 4;
-            label7.Text = "Повтор пароля";
+            label7.Size = new Size(237, 35);
+            label7.TabIndex = 3;
+            label7.Text = "Перевірка пароля";
             // 
-            // ConfigmPassword
+            // txtPasswordCheck
             // 
-            ConfigmPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            ConfigmPassword.Location = new Point(546, 320);
-            ConfigmPassword.Name = "ConfigmPassword";
-            ConfigmPassword.Size = new Size(489, 39);
-            ConfigmPassword.TabIndex = 5;
-            ConfigmPassword.UseSystemPasswordChar = true;
+            txtPasswordCheck.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtPasswordCheck.Location = new Point(444, 386);
+            txtPasswordCheck.Name = "txtPasswordCheck";
+            txtPasswordCheck.Size = new Size(320, 38);
+            txtPasswordCheck.TabIndex = 4;
+            txtPasswordCheck.UseSystemPasswordChar = true;
+            // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnSave.Location = new Point(31, 463);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(133, 57);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Зберегти";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(31, 175);
+            label8.Name = "label8";
+            label8.Size = new Size(172, 25);
+            label8.TabIndex = 3;
+            label8.Tag = "error";
+            label8.Text = "Вкажіть ваше ім'я";
+            label8.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(444, 175);
+            label9.Name = "label9";
+            label9.Size = new Size(221, 25);
+            label9.TabIndex = 3;
+            label9.Tag = "error";
+            label9.Text = "Вкажіть ваше прізвище";
+            label9.Visible = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label10.ForeColor = Color.Red;
+            label10.Location = new Point(31, 304);
+            label10.Name = "label10";
+            label10.Size = new Size(187, 25);
+            label10.TabIndex = 3;
+            label10.Tag = "error";
+            label10.Text = "Вкажіть вашу групу";
+            label10.Visible = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label11.ForeColor = Color.Red;
+            label11.Location = new Point(444, 304);
+            label11.Name = "label11";
+            label11.Size = new Size(194, 25);
+            label11.TabIndex = 3;
+            label11.Tag = "error";
+            label11.Text = "Вкажіть вашу пошту";
+            label11.Visible = false;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label12.ForeColor = Color.Red;
+            label12.Location = new Point(31, 432);
+            label12.Name = "label12";
+            label12.Size = new Size(192, 25);
+            label12.TabIndex = 3;
+            label12.Tag = "error";
+            label12.Text = "Вкажіть ваш пароль";
+            label12.Visible = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label13.ForeColor = Color.Red;
+            label13.Location = new Point(444, 432);
+            label13.Name = "label13";
+            label13.Size = new Size(169, 25);
+            label13.TabIndex = 3;
+            label13.Tag = "error";
+            label13.Text = "Повторіть пароль";
+            label13.Visible = false;
+            // 
+            // btnVissiblePassword
+            // 
+            btnVissiblePassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnVissiblePassword.Location = new Point(318, 386);
+            btnVissiblePassword.Name = "btnVissiblePassword";
+            btnVissiblePassword.Size = new Size(33, 38);
+            btnVissiblePassword.TabIndex = 6;
+            btnVissiblePassword.Text = "👁️";
+            btnVissiblePassword.UseVisualStyleBackColor = true;
+            btnVissiblePassword.Click += btnVissiblePassword_Click;
+            // 
+            // btnCheck
+            // 
+            btnCheck.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnCheck.Location = new Point(731, 386);
+            btnCheck.Name = "btnCheck";
+            btnCheck.Size = new Size(33, 38);
+            btnCheck.TabIndex = 6;
+            btnCheck.Text = "👁️";
+            btnCheck.UseVisualStyleBackColor = true;
+            btnCheck.Click += btnCheck_Click;
             // 
             // RegisterForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(1061, 532);
-            Controls.Add(txtEmail);
-            Controls.Add(label5);
+            BackColor = SystemColors.ControlDark;
+            ClientSize = new Size(852, 532);
+            Controls.Add(btnCheck);
+            Controls.Add(btnVissiblePassword);
+            Controls.Add(btnSave);
             Controls.Add(txtGroup);
-            Controls.Add(label4);
-            Controls.Add(ConfigmPassword);
-            Controls.Add(label7);
+            Controls.Add(txtPasswordCheck);
             Controls.Add(txtPassword);
-            Controls.Add(label6);
+            Controls.Add(txtEmail);
+            Controls.Add(label7);
             Controls.Add(txtLastName);
+            Controls.Add(label6);
+            Controls.Add(txtName);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(txtFirstName);
             Controls.Add(label2);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(lbQuestion);
             Controls.Add(label1);
             Controls.Add(btnChangeStyles);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "RegisterForm";
-            Text = "Реєстарція користувача";
+            Text = "Реєстрація користувача";
             Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -236,16 +367,25 @@
         private Label label1;
         private Label lbQuestion;
         private Label label2;
-        private TextBox txtFirstName;
         private Label label3;
-        private TextBox txtLastName;
-        private TextBox txtGroup;
         private Label label4;
         private Label label5;
+        private TextBox txtName;
+        private TextBox txtLastName;
         private TextBox txtEmail;
+        private TextBox txtGroup;
         private Label label6;
         private TextBox txtPassword;
         private Label label7;
-        private TextBox ConfigmPassword;
+        private TextBox txtPasswordCheck;
+        private Button btnSave;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Button btnVissiblePassword;
+        private Button btnCheck;
     }
 }
