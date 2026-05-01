@@ -1,3 +1,4 @@
+//using Newtonsoft.Json;
 using System.Text.Json;
 
 namespace FormOptions
@@ -143,6 +144,16 @@ namespace FormOptions
             if (!hasError)
             {
                 DialogResult = DialogResult.OK;
+                User newUser = new User
+                {
+                    Name = txtName.Text,
+                    LastName = txtLastName.Text,
+                    Group = txtGroup.Text,
+                    Email = txtEmail.Text,
+                    Password = txtPassword.Text
+                };
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
+                File.WriteAllText("users.json", json);
                 Close();
             }
             
