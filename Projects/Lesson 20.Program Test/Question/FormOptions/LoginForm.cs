@@ -3,23 +3,19 @@ using System.Text.Json;
 
 namespace FormOptions
 {
-    public partial class RegisterForm : Form
+    public partial class LoginForm : Form
     {
         // Налаштування теми
         bool isDarkMode = false;
         string configPath = "appsettings.json";
 
 
-        public RegisterForm()
+        public LoginForm()
         {
             InitializeComponent();
 
-            txtName.TextChanged += (s, e) => ClearErrorOnInput(txtName, label8); //використовується для очищення помилки
-            txtLastName.TextChanged += (s, e) => ClearErrorOnInput(txtLastName, label9);
-            txtGroup.TextChanged += (s, e) => ClearErrorOnInput(txtGroup, label10);
             txtEmail.TextChanged += (s, e) => ClearErrorOnInput(txtEmail, label11);
             txtPassword.TextChanged += (s, e) => ClearErrorOnInput(txtPassword, label12);
-            txtPasswordCheck.TextChanged += (s, e) => ClearErrorOnInput(txtPasswordCheck, label13);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -101,23 +97,6 @@ namespace FormOptions
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool hasError = false;
-            if (string.IsNullOrWhiteSpace(txtName.Text))
-            {
-                label8.Visible = true;
-                hasError = true;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtLastName.Text))
-            {
-                label9.Visible = true;
-                hasError = true;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtGroup.Text))
-            {
-                label10.Visible = true;
-                hasError = true;
-            }
 
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -130,33 +109,22 @@ namespace FormOptions
                 label12.Visible = true;
                 hasError = true;
             }
-
-            if (string.IsNullOrWhiteSpace(txtPasswordCheck.Text))
-            {
-                label13.Visible = true;
-                hasError = true;
-            }
-            if (txtPassword.Text != txtPasswordCheck.Text)
-            {
-                label13.Visible = true;
-                hasError = true;
-            }
+           
             if (!hasError)
             {
-                DialogResult = DialogResult.OK;
-                User newUser = new User
+                var user  = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(File.ReadAllText("users.json"));
+                if(user.Email == txtEmail.Text && user.Password == hashPasswordMD5(txtPassword.Text))
                 {
-                    Name = txtName.Text,
-                    LastName = txtLastName.Text,
-                    Group = txtGroup.Text,
-                    Email = txtEmail.Text,
-                    Password = hashPasswordMD5(txtPassword.Text)
-                };
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
-                File.WriteAllText("users.json", json);
-                LoginForm dlg = new LoginForm();
-                dlg.ShowDialog();
-                this.Close();
+                    MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    MainForm mainForm = new MainForm();
+                    mainForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Невірний email або пароль.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             
         }
@@ -165,10 +133,7 @@ namespace FormOptions
         {
             txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
         }
-        private void btnCheck_Click(object sender, EventArgs e)
-        {
-            txtPasswordCheck.UseSystemPasswordChar = !txtPasswordCheck.UseSystemPasswordChar;
-        }
+
 
         private string hashPasswordMD5(string password)
         {
