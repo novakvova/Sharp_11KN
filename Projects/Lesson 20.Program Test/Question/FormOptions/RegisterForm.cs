@@ -154,9 +154,9 @@ namespace FormOptions
                 };
                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
                 File.WriteAllText("users.json", json);
+                this.Hide();
                 LoginForm dlg = new LoginForm();
                 dlg.ShowDialog();
-                this.Close();
             }
             
         }
