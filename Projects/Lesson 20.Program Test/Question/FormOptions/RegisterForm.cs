@@ -143,6 +143,28 @@ namespace FormOptions
             }
             if (!hasError)
             {
+                // Зберігає список користувачів
+                List<User> users = new List<User>();
+
+                var json = "";
+                if(File.Exists("storage.json")) //Якщо існую користувачів, то ми їх читаємо
+                    json = File.ReadAllText("storage.json");
+
+                //Отримуємо усіх користувачів із файлу
+                users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(json)
+                    ?? new List<User>();
+                
+                //Будемо шукати у списки користувача, який можна знайти по пошті
+                //пошук 1 користувача, якщо їх 2 то буде 0
+                User? user = users.SingleOrDefault(x => x.Email == txtEmail.Text);
+
+                if(user!=null)
+                {
+                    MessageBox.Show("Користувач з даною поштою уже зареєстрований");
+                    return;
+                }
+                
+
                 DialogResult = DialogResult.OK;
                 User newUser = new User
                 {
@@ -152,11 +174,13 @@ namespace FormOptions
                     Email = txtEmail.Text,
                     Password = hashPasswordMD5(txtPassword.Text)
                 };
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(newUser);
-                File.WriteAllText("users.json", json);
-                this.Hide();
-                LoginForm dlg = new LoginForm();
-                dlg.ShowDialog();
+                
+                users.Add(newUser);
+                json = Newtonsoft.Json.JsonConvert.SerializeObject(users);
+                File.WriteAllText("storage.json", json);
+                //this.Hide();
+                //LoginForm dlg = new LoginForm();
+                //dlg.ShowDialog();
             }
             
         }
