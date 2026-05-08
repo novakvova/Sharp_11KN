@@ -187,6 +187,7 @@
             btnToLogin.TabIndex = 7;
             btnToLogin.Text = "Перейти до реєстрації";
             btnToLogin.UseVisualStyleBackColor = true;
+            btnToLogin.Click += btnToLogin_Click;
             // 
             // LoginForm
             // 

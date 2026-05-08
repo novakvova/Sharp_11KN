@@ -147,23 +147,31 @@ namespace FormOptions
                 List<User> users = new List<User>();
 
                 var json = "";
-                if(File.Exists("storage.json")) //Якщо існую користувачів, то ми їх читаємо
+                if (File.Exists("storage.json")) //Якщо існую користувачів, то ми їх читаємо
                     json = File.ReadAllText("storage.json");
 
                 //Отримуємо усіх користувачів із файлу
                 users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(json)
                     ?? new List<User>();
-                
+
                 //Будемо шукати у списки користувача, який можна знайти по пошті
                 //пошук 1 користувача, якщо їх 2 то буде 0
                 User? user = users.SingleOrDefault(x => x.Email == txtEmail.Text);
 
-                if(user!=null)
+                if (user!=null)
+                {
+                    if (!string.IsNullOrEmpty(user.Value.Email))
+                    {
+                        MessageBox.Show("Користувач з даною поштою уже зареєстрований");
+                        return;
+                    }
+                }
+                else
                 {
                     MessageBox.Show("Користувач з даною поштою уже зареєстрований");
                     return;
                 }
-                
+
 
                 DialogResult = DialogResult.OK;
                 User newUser = new User
@@ -174,7 +182,7 @@ namespace FormOptions
                     Email = txtEmail.Text,
                     Password = hashPasswordMD5(txtPassword.Text)
                 };
-                
+
                 users.Add(newUser);
                 json = Newtonsoft.Json.JsonConvert.SerializeObject(users);
                 File.WriteAllText("storage.json", json);
@@ -182,7 +190,7 @@ namespace FormOptions
                 //LoginForm dlg = new LoginForm();
                 //dlg.ShowDialog();
             }
-            
+
         }
 
         private void btnVissiblePassword_Click(object sender, EventArgs e)
@@ -206,5 +214,19 @@ namespace FormOptions
             return Convert.ToHexString(hashBytes); // .NET 5+ method
         }
 
+        private void btnToLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            this.Hide();
+            if(loginForm.ShowDialog()==DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Show();
+                //this.Close();
+            }
+        }
     }
 }

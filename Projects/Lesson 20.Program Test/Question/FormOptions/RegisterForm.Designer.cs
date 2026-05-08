@@ -146,7 +146,7 @@
             // 
             txtName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtName.Location = new Point(39, 161);
-            txtName.Margin = new Padding(4, 4, 4, 4);
+            txtName.Margin = new Padding(4);
             txtName.Multiline = true;
             txtName.Name = "txtName";
             txtName.Size = new Size(399, 53);
@@ -156,7 +156,7 @@
             // 
             txtLastName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtLastName.Location = new Point(555, 161);
-            txtLastName.Margin = new Padding(4, 4, 4, 4);
+            txtLastName.Margin = new Padding(4);
             txtLastName.Multiline = true;
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(399, 53);
@@ -166,7 +166,7 @@
             // 
             txtEmail.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtEmail.Location = new Point(555, 325);
-            txtEmail.Margin = new Padding(4, 4, 4, 4);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(399, 53);
@@ -176,7 +176,7 @@
             // 
             txtGroup.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtGroup.Location = new Point(39, 325);
-            txtGroup.Margin = new Padding(4, 4, 4, 4);
+            txtGroup.Margin = new Padding(4);
             txtGroup.Multiline = true;
             txtGroup.Name = "txtGroup";
             txtGroup.Size = new Size(399, 53);
@@ -198,7 +198,7 @@
             // 
             txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtPassword.Location = new Point(39, 482);
-            txtPassword.Margin = new Padding(4, 4, 4, 4);
+            txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(399, 44);
             txtPassword.TabIndex = 4;
@@ -220,7 +220,7 @@
             // 
             txtPasswordCheck.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             txtPasswordCheck.Location = new Point(555, 482);
-            txtPasswordCheck.Margin = new Padding(4, 4, 4, 4);
+            txtPasswordCheck.Margin = new Padding(4);
             txtPasswordCheck.Name = "txtPasswordCheck";
             txtPasswordCheck.Size = new Size(399, 44);
             txtPasswordCheck.TabIndex = 4;
@@ -230,7 +230,7 @@
             // 
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnSave.Location = new Point(555, 581);
-            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Margin = new Padding(4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(166, 71);
             btnSave.TabIndex = 5;
@@ -326,7 +326,7 @@
             // 
             btnVissiblePassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnVissiblePassword.Location = new Point(398, 482);
-            btnVissiblePassword.Margin = new Padding(4, 4, 4, 4);
+            btnVissiblePassword.Margin = new Padding(4);
             btnVissiblePassword.Name = "btnVissiblePassword";
             btnVissiblePassword.Size = new Size(41, 48);
             btnVissiblePassword.TabIndex = 6;
@@ -338,7 +338,7 @@
             // 
             btnCheck.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             btnCheck.Location = new Point(914, 482);
-            btnCheck.Margin = new Padding(4, 4, 4, 4);
+            btnCheck.Margin = new Padding(4);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(41, 48);
             btnCheck.TabIndex = 6;
@@ -356,6 +356,7 @@
             btnToLogin.TabIndex = 7;
             btnToLogin.Text = "Перейти до входу";
             btnToLogin.UseVisualStyleBackColor = true;
+            btnToLogin.Click += btnToLogin_Click;
             // 
             // RegisterForm
             // 

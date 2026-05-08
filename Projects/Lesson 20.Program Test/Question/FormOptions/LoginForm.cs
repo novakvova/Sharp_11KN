@@ -1,4 +1,5 @@
 //using Newtonsoft.Json;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Text.Json;
 
 namespace FormOptions
@@ -109,24 +110,33 @@ namespace FormOptions
                 label12.Visible = true;
                 hasError = true;
             }
-           
+
             if (!hasError)
             {
-                var user  = Newtonsoft.Json.JsonConvert.DeserializeObject<User>(File.ReadAllText("users.json"));
-                if(user.Email == txtEmail.Text && user.Password == hashPasswordMD5(txtPassword.Text))
+                string json = File.ReadAllText("storage.json");
+                var users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(json)
+                    ?? new List<User>();
+
+                User? user = users.SingleOrDefault(x => x.Email == txtEmail.Text);
+
+                if (user!=null)
                 {
-                    MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    MainForm mainForm = new MainForm();
-                    mainForm.ShowDialog();
-                    this.Close();
+                    if (!string.IsNullOrEmpty(user.Value.Email))
+                    {
+                        if (user.Value.Password == hashPasswordMD5(txtPassword.Text))
+                        {
+                            MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //this.Close();
+                            return;
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Невірний email або пароль.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
+                MessageBox.Show("Дані вказано не вірно");
+                return;
+
             }
-            
+
         }
 
         private void btnVissiblePassword_Click(object sender, EventArgs e)
@@ -147,5 +157,9 @@ namespace FormOptions
             return Convert.ToHexString(hashBytes); // .NET 5+ method
         }
 
+        private void btnToLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
