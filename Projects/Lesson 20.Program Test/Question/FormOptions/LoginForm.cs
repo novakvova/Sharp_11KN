@@ -1,5 +1,7 @@
 //using Newtonsoft.Json;
+using MailKit.Net.Smtp;
 using Microsoft.VisualBasic.ApplicationServices;
+using MimeKit;
 using System.Text.Json;
 
 namespace FormOptions
@@ -161,5 +163,72 @@ namespace FormOptions
         {
             this.Close();
         }
+
+
+
+        private void btnRestoreRequest_Click(object sender, EventArgs e)
+        {
+            string message = "Відновлення паролю";
+            string body = "Ось код для відновлення паролю: ";
+            string to = txtEmail.Text;
+            MySendEmail(message, body, to);
+
+        }
+
+        async Task MySendEmail(string subject, string body, string to)
+        {
+            //пароль для додатку
+            string password = "mNVAsm2BvttvjJlW"; //пароль у кожного свій
+                                                  //назва smtp - сервера
+            string smtpServer = "smtp.ukr.net";
+            //потр на якому працює сервер
+            int port = 2525;
+            //хто буде відправляти листи
+            string from = "super.novakvova@ukr.net"; //користувач у кожного свій
+                                                     //ім'я користувача
+            string username = from;
+
+
+            //string to = "novakvova@gmail.com";
+
+            //var attachment = new MimePart("image", "webp")
+            //{
+            //    FileName = "Привіт друже",
+            //    Content = new MimeContent(File.OpenRead(file))
+            //};
+
+            var bodyHtml = new TextPart("html")
+            {
+                Text = body
+            };
+            var multipart = new Multipart("mixed");
+            multipart.Add(bodyHtml);
+            //multipart.Add(attachment);
+
+            var emailMessage = new MimeMessage();
+            emailMessage.From.Add(new MailboxAddress(from));
+            emailMessage.To.Add(new MailboxAddress(to));
+            emailMessage.Subject = subject;
+
+            emailMessage.Body = multipart;
+
+            using var client = new SmtpClient();
+            try
+            {
+                await client.ConnectAsync(smtpServer, port, true);
+                await client.AuthenticateAsync(username, password);
+                await client.SendAsync(emailMessage);
+                await client.DisconnectAsync(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Щось пішло не так!");
+                //Console.WriteLine("Error send EMAIL {0}", ex.Message);
+            }
+        }
+
+
+
+
     }
 }

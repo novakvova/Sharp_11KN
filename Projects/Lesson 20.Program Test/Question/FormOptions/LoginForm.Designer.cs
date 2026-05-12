@@ -40,6 +40,7 @@
             label12 = new Label();
             btnVissiblePassword = new Button();
             btnToLogin = new Button();
+            btnRestoreRequest = new Button();
             SuspendLayout();
             // 
             // btnChangeStyles
@@ -189,6 +190,19 @@
             btnToLogin.UseVisualStyleBackColor = true;
             btnToLogin.Click += btnToLogin_Click;
             // 
+            // btnRestoreRequest
+            // 
+            btnRestoreRequest.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            btnRestoreRequest.ForeColor = Color.Blue;
+            btnRestoreRequest.Location = new Point(758, 390);
+            btnRestoreRequest.Margin = new Padding(4);
+            btnRestoreRequest.Name = "btnRestoreRequest";
+            btnRestoreRequest.Size = new Size(267, 71);
+            btnRestoreRequest.TabIndex = 5;
+            btnRestoreRequest.Text = "Відновити пароль";
+            btnRestoreRequest.UseVisualStyleBackColor = true;
+            btnRestoreRequest.Click += btnRestoreRequest_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -197,6 +211,7 @@
             ClientSize = new Size(1065, 493);
             Controls.Add(btnToLogin);
             Controls.Add(btnVissiblePassword);
+            Controls.Add(btnRestoreRequest);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
@@ -230,5 +245,6 @@
         private Label label12;
         private Button btnVissiblePassword;
         private Button btnToLogin;
+        private Button btnRestoreRequest;
     }
 }
