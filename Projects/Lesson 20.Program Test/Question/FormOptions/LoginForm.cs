@@ -129,7 +129,12 @@ namespace FormOptions
                         {
                             MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //this.Close();
-                            return;
+                            string fileAuthUser = "auth.bin";
+                            json = Newtonsoft.Json.JsonConvert.SerializeObject(user); // інформація про користувача
+                            File.WriteAllText(fileAuthUser, json);
+                            //Це означає, що кристувач успішно зайшов
+                            DialogResult = DialogResult.OK;
+
                         }
                     }
                 }
@@ -161,7 +166,9 @@ namespace FormOptions
 
         private void btnToLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            RegisterForm dlg = new RegisterForm();
+            dlg.ShowDialog();
+            //this.Close();
         }
 
 

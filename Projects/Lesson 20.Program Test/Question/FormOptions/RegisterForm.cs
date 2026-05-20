@@ -217,7 +217,8 @@ namespace FormOptions
 
         private void btnToLogin_Click(object sender, EventArgs e)
         {
-            ToLoginForm();
+            //ToLoginForm();
+            this.Close();
         }
 
         private void ToLoginForm()
