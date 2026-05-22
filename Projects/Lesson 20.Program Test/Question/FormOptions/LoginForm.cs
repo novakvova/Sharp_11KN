@@ -134,12 +134,14 @@ namespace FormOptions
                             File.WriteAllText(fileAuthUser, json);
                             //Це означає, що кристувач успішно зайшов
                             DialogResult = DialogResult.OK;
+                            this.Close();
+                            return;
 
                         }
                     }
                 }
 
-                MessageBox.Show("Дані вказано не вірно");
+                //MessageBox.Show("Дані вказано не вірно");
                 return;
 
             }

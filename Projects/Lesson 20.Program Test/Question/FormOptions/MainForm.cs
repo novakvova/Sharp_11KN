@@ -22,26 +22,35 @@ namespace FormOptions
         {
             //Тут знаходиться користувач, який є авторизований
             string fileAuthUser = "auth.bin";
-            if(File.Exists(fileAuthUser))
+            if (File.Exists(fileAuthUser))
             {
                 var json = File.ReadAllText(fileAuthUser);
                 var user = JsonConvert.DeserializeObject<User>(json);
+                lbPIB.Text = user.LastName + " " + user.Name;
             }
             else
             {
                 LoginForm dlgLogin = new LoginForm();
                 //якщо користвач у форму ввів вірно дані по входу
-                if(dlgLogin.ShowDialog() == DialogResult.OK)
+                if (dlgLogin.ShowDialog() == DialogResult.OK)
                 {
                     //Читаємо дані про користувача
                     var json = File.ReadAllText(fileAuthUser);
                     var user = JsonConvert.DeserializeObject<User>(json);
+                    lbPIB.Text = user.LastName + " " + user.Name;
                 }
                 else
                 {
                     Application.Exit(); //якщо не не зайшов, ми виходимо з програми
                 }
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //Видаляємо користувача, який зайшов
+            File.Delete("auth.bin");
+            Application.Exit();
         }
     }
 }
