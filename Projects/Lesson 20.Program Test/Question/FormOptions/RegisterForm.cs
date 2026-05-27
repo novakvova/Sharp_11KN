@@ -186,7 +186,8 @@ namespace FormOptions
                 users.Add(newUser);
                 json = Newtonsoft.Json.JsonConvert.SerializeObject(users);
                 File.WriteAllText("storage.json", json);
-                ToLoginForm();
+                this.Close();
+                //ToLoginForm();
                 //this.Hide();
                 //LoginForm dlg = new LoginForm();
                 //dlg.ShowDialog();
@@ -223,17 +224,17 @@ namespace FormOptions
 
         private void ToLoginForm()
         {
-            LoginForm loginForm = new LoginForm();
-            this.Hide();
-            if (loginForm.ShowDialog()==DialogResult.OK)
-            {
-                this.Close();
-            }
-            else
-            {
-                this.Show();
-                //this.Close();
-            }
+            //LoginForm loginForm = new LoginForm();
+            //this.Hide();
+            //if (loginForm.ShowDialog()==DialogResult.OK)
+            //{
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    this.Show();
+            //    //this.Close();
+            //}
         }
     }
 }

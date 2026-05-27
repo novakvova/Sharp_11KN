@@ -115,10 +115,14 @@ namespace FormOptions
 
             if (!hasError)
             {
-                string json = File.ReadAllText("storage.json");
-                var users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(json)
-                    ?? new List<User>();
-
+                var users = new List<User>();
+                if (File.Exists("storage.json"))
+                {
+                    string json = File.ReadAllText("storage.json");
+                    users = Newtonsoft.Json.JsonConvert.DeserializeObject<List<User>>(json)
+                        ?? new List<User>();
+                }
+                
                 User? user = users.SingleOrDefault(x => x.Email == txtEmail.Text);
 
                 if (user!=null)
@@ -130,7 +134,7 @@ namespace FormOptions
                             MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //this.Close();
                             string fileAuthUser = "auth.bin";
-                            json = Newtonsoft.Json.JsonConvert.SerializeObject(user); // інформація про користувача
+                            string json = Newtonsoft.Json.JsonConvert.SerializeObject(user); // інформація про користувача
                             File.WriteAllText(fileAuthUser, json);
                             //Це означає, що кристувач успішно зайшов
                             DialogResult = DialogResult.OK;
@@ -141,7 +145,7 @@ namespace FormOptions
                     }
                 }
 
-                //MessageBox.Show("Дані вказано не вірно");
+                MessageBox.Show("Дані вказано не вірно");
                 return;
 
             }
