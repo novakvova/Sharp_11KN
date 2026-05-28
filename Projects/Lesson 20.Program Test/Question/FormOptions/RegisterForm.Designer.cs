@@ -65,7 +65,7 @@
             btnChangeStyles.Margin = new Padding(4, 5, 4, 5);
             btnChangeStyles.Name = "btnChangeStyles";
             btnChangeStyles.Size = new Size(121, 58);
-            btnChangeStyles.TabIndex = 0;
+            btnChangeStyles.TabIndex = 11;
             btnChangeStyles.Text = "Темна";
             btnChangeStyles.UseVisualStyleBackColor = false;
             btnChangeStyles.Click += btnChangeStyles_Click;
@@ -79,7 +79,7 @@
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(95, 32);
-            label1.TabIndex = 2;
+            label1.TabIndex = 0;
             label1.Text = "ТЕМА :";
             // 
             // lbQuestion
@@ -91,7 +91,7 @@
             lbQuestion.Margin = new Padding(4, 0, 4, 0);
             lbQuestion.Name = "lbQuestion";
             lbQuestion.Size = new Size(361, 41);
-            lbQuestion.TabIndex = 3;
+            lbQuestion.TabIndex = 0;
             lbQuestion.Text = "Створити новий акаунт";
             // 
             // label2
@@ -103,7 +103,7 @@
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(77, 41);
-            label2.TabIndex = 3;
+            label2.TabIndex = 0;
             label2.Text = "Ім'я";
             // 
             // label3
@@ -115,7 +115,7 @@
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(162, 41);
-            label3.TabIndex = 3;
+            label3.TabIndex = 0;
             label3.Text = "Прізвище";
             // 
             // label4
@@ -127,7 +127,7 @@
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(100, 41);
-            label4.TabIndex = 3;
+            label4.TabIndex = 0;
             label4.Text = "Група";
             // 
             // label5
@@ -139,7 +139,7 @@
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(115, 41);
-            label5.TabIndex = 3;
+            label5.TabIndex = 0;
             label5.Text = "Пошта";
             // 
             // txtName
@@ -150,7 +150,7 @@
             txtName.Multiline = true;
             txtName.Name = "txtName";
             txtName.Size = new Size(399, 53);
-            txtName.TabIndex = 4;
+            txtName.TabIndex = 1;
             // 
             // txtLastName
             // 
@@ -160,7 +160,7 @@
             txtLastName.Multiline = true;
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(399, 53);
-            txtLastName.TabIndex = 4;
+            txtLastName.TabIndex = 2;
             // 
             // txtEmail
             // 
@@ -180,7 +180,7 @@
             txtGroup.Multiline = true;
             txtGroup.Name = "txtGroup";
             txtGroup.Size = new Size(399, 53);
-            txtGroup.TabIndex = 4;
+            txtGroup.TabIndex = 3;
             // 
             // label6
             // 
@@ -191,7 +191,7 @@
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(129, 41);
-            label6.TabIndex = 3;
+            label6.TabIndex = 0;
             label6.Text = "Пароль";
             // 
             // txtPassword
@@ -201,7 +201,7 @@
             txtPassword.Margin = new Padding(4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(399, 44);
-            txtPassword.TabIndex = 4;
+            txtPassword.TabIndex = 5;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // label7
@@ -213,7 +213,7 @@
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(284, 41);
-            label7.TabIndex = 3;
+            label7.TabIndex = 0;
             label7.Text = "Перевірка пароля";
             // 
             // txtPasswordCheck
@@ -223,7 +223,7 @@
             txtPasswordCheck.Margin = new Padding(4);
             txtPasswordCheck.Name = "txtPasswordCheck";
             txtPasswordCheck.Size = new Size(399, 44);
-            txtPasswordCheck.TabIndex = 4;
+            txtPasswordCheck.TabIndex = 7;
             txtPasswordCheck.UseSystemPasswordChar = true;
             // 
             // btnSave
@@ -233,7 +233,7 @@
             btnSave.Margin = new Padding(4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(166, 71);
-            btnSave.TabIndex = 5;
+            btnSave.TabIndex = 9;
             btnSave.Text = "Реєстрація";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
@@ -247,7 +247,7 @@
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(208, 30);
-            label8.TabIndex = 3;
+            label8.TabIndex = 0;
             label8.Tag = "error";
             label8.Text = "Вкажіть ваше ім'я";
             label8.Visible = false;
@@ -261,7 +261,7 @@
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(269, 30);
-            label9.TabIndex = 3;
+            label9.TabIndex = 0;
             label9.Tag = "error";
             label9.Text = "Вкажіть ваше прізвище";
             label9.Visible = false;
@@ -275,7 +275,7 @@
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(226, 30);
-            label10.TabIndex = 3;
+            label10.TabIndex = 0;
             label10.Tag = "error";
             label10.Text = "Вкажіть вашу групу";
             label10.Visible = false;
@@ -289,7 +289,7 @@
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(233, 30);
-            label11.TabIndex = 3;
+            label11.TabIndex = 0;
             label11.Tag = "error";
             label11.Text = "Вкажіть вашу пошту";
             label11.Visible = false;
@@ -303,7 +303,7 @@
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(231, 30);
-            label12.TabIndex = 3;
+            label12.TabIndex = 0;
             label12.Tag = "error";
             label12.Text = "Вкажіть ваш пароль";
             label12.Visible = false;
@@ -317,7 +317,7 @@
             label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
             label13.Size = new Size(204, 30);
-            label13.TabIndex = 3;
+            label13.TabIndex = 0;
             label13.Tag = "error";
             label13.Text = "Повторіть пароль";
             label13.Visible = false;
@@ -341,7 +341,7 @@
             btnCheck.Margin = new Padding(4);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(41, 48);
-            btnCheck.TabIndex = 6;
+            btnCheck.TabIndex = 8;
             btnCheck.Text = "👁️";
             btnCheck.UseVisualStyleBackColor = true;
             btnCheck.Click += btnCheck_Click;
@@ -353,7 +353,7 @@
             btnToLogin.Margin = new Padding(4);
             btnToLogin.Name = "btnToLogin";
             btnToLogin.Size = new Size(253, 71);
-            btnToLogin.TabIndex = 7;
+            btnToLogin.TabIndex = 10;
             btnToLogin.Text = "Перейти до входу";
             btnToLogin.UseVisualStyleBackColor = true;
             btnToLogin.Click += btnToLogin_Click;
@@ -392,6 +392,7 @@
             Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             Name = "RegisterForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Реєстрація користувача";
             Load += MainForm_Load;
             ResumeLayout(false);

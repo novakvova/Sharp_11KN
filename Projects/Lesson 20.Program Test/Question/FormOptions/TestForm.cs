@@ -89,7 +89,9 @@ namespace FormOptions
             }
             else
             {
-                MessageBox.Show($"Тест закінчено! Правильних відповідей: {score} з {questions.Count}", "Результат");
+                MessageBox.Show($"Тест закінчено! " +
+                    $"Правильних відповідей: " +
+                    $"{score} з {questions.Count}", "Результат");
                 currentQuestionIndex = 0;
                 score = 0;
                 DisplayQuestion();

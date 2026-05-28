@@ -78,6 +78,7 @@
             btnRunTest.TabIndex = 3;
             btnRunTest.Text = "Пройти тест";
             btnRunTest.UseVisualStyleBackColor = true;
+            btnRunTest.Click += btnRunTest_Click;
             // 
             // MainForm
             // 
@@ -91,6 +92,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainForm";
+            FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -131,7 +131,7 @@ namespace FormOptions
                     {
                         if (user.Value.Password == hashPasswordMD5(txtPassword.Text))
                         {
-                            MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("Вхід успішний!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //this.Close();
                             string fileAuthUser = "auth.bin";
                             string json = Newtonsoft.Json.JsonConvert.SerializeObject(user); // інформація про користувача

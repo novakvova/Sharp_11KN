@@ -44,9 +44,10 @@
             btnChangeStyles.FlatAppearance.BorderSize = 0;
             btnChangeStyles.FlatStyle = FlatStyle.Flat;
             btnChangeStyles.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnChangeStyles.Location = new Point(80, 272);
+            btnChangeStyles.Location = new Point(114, 453);
+            btnChangeStyles.Margin = new Padding(4, 5, 4, 5);
             btnChangeStyles.Name = "btnChangeStyles";
-            btnChangeStyles.Size = new Size(85, 35);
+            btnChangeStyles.Size = new Size(121, 58);
             btnChangeStyles.TabIndex = 0;
             btnChangeStyles.Text = "Темна";
             btnChangeStyles.UseVisualStyleBackColor = false;
@@ -57,9 +58,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 278);
+            label1.Location = new Point(17, 463);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(62, 21);
+            label1.Size = new Size(95, 32);
             label1.TabIndex = 2;
             label1.Text = "ТЕМА :";
             // 
@@ -68,9 +70,10 @@
             lbQuestion.AutoSize = true;
             lbQuestion.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lbQuestion.ForeColor = Color.Black;
-            lbQuestion.Location = new Point(12, 9);
+            lbQuestion.Location = new Point(17, 15);
+            lbQuestion.Margin = new Padding(4, 0, 4, 0);
             lbQuestion.Name = "lbQuestion";
-            lbQuestion.Size = new Size(667, 28);
+            lbQuestion.Size = new Size(983, 41);
             lbQuestion.TabIndex = 3;
             lbQuestion.Text = "Яка подія вважається офіційним початком Другої світової війни?";
             // 
@@ -80,9 +83,10 @@
             btnCont.FlatAppearance.BorderSize = 0;
             btnCont.FlatStyle = FlatStyle.Flat;
             btnCont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnCont.Location = new Point(606, 264);
+            btnCont.Location = new Point(866, 440);
+            btnCont.Margin = new Padding(4, 5, 4, 5);
             btnCont.Name = "btnCont";
-            btnCont.Size = new Size(125, 43);
+            btnCont.Size = new Size(179, 72);
             btnCont.TabIndex = 4;
             btnCont.Text = "Продовжити";
             btnCont.UseVisualStyleBackColor = false;
@@ -92,9 +96,10 @@
             // 
             rdBtnAnswer1.AutoSize = true;
             rdBtnAnswer1.Font = new Font("Segoe UI", 15F);
-            rdBtnAnswer1.Location = new Point(12, 49);
+            rdBtnAnswer1.Location = new Point(17, 82);
+            rdBtnAnswer1.Margin = new Padding(4, 5, 4, 5);
             rdBtnAnswer1.Name = "rdBtnAnswer1";
-            rdBtnAnswer1.Size = new Size(175, 32);
+            rdBtnAnswer1.Size = new Size(257, 45);
             rdBtnAnswer1.TabIndex = 5;
             rdBtnAnswer1.TabStop = true;
             rdBtnAnswer1.Text = "Аншлюз Австрії";
@@ -104,9 +109,10 @@
             // 
             rdBtnAnswer2.AutoSize = true;
             rdBtnAnswer2.Font = new Font("Segoe UI", 15F);
-            rdBtnAnswer2.Location = new Point(12, 87);
+            rdBtnAnswer2.Location = new Point(17, 145);
+            rdBtnAnswer2.Margin = new Padding(4, 5, 4, 5);
             rdBtnAnswer2.Name = "rdBtnAnswer2";
-            rdBtnAnswer2.Size = new Size(298, 32);
+            rdBtnAnswer2.Size = new Size(443, 45);
             rdBtnAnswer2.TabIndex = 6;
             rdBtnAnswer2.TabStop = true;
             rdBtnAnswer2.Text = "Напад Німеччини на Польщу";
@@ -116,9 +122,10 @@
             // 
             rdBtnAnswer3.AutoSize = true;
             rdBtnAnswer3.Font = new Font("Segoe UI", 15F);
-            rdBtnAnswer3.Location = new Point(12, 125);
+            rdBtnAnswer3.Location = new Point(17, 208);
+            rdBtnAnswer3.Margin = new Padding(4, 5, 4, 5);
             rdBtnAnswer3.Name = "rdBtnAnswer3";
-            rdBtnAnswer3.Size = new Size(241, 32);
+            rdBtnAnswer3.Size = new Size(358, 45);
             rdBtnAnswer3.TabIndex = 7;
             rdBtnAnswer3.TabStop = true;
             rdBtnAnswer3.Text = "Напад на Перл-Гарбор";
@@ -128,20 +135,21 @@
             // 
             rdBtnAnswer4.AutoSize = true;
             rdBtnAnswer4.Font = new Font("Segoe UI", 15F);
-            rdBtnAnswer4.Location = new Point(12, 163);
+            rdBtnAnswer4.Location = new Point(17, 272);
+            rdBtnAnswer4.Margin = new Padding(4, 5, 4, 5);
             rdBtnAnswer4.Name = "rdBtnAnswer4";
-            rdBtnAnswer4.Size = new Size(417, 32);
+            rdBtnAnswer4.Size = new Size(616, 45);
             rdBtnAnswer4.TabIndex = 8;
             rdBtnAnswer4.TabStop = true;
             rdBtnAnswer4.Text = "Підписання Пакту Молотова-Ріббентропа";
             rdBtnAnswer4.UseVisualStyleBackColor = true;
             // 
-            // MainForm
+            // TestForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(743, 319);
+            ClientSize = new Size(1061, 532);
             Controls.Add(rdBtnAnswer4);
             Controls.Add(rdBtnAnswer3);
             Controls.Add(rdBtnAnswer2);
@@ -150,8 +158,10 @@
             Controls.Add(lbQuestion);
             Controls.Add(label1);
             Controls.Add(btnChangeStyles);
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
-            Name = "MainForm";
+            Name = "TestForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Тест";
             Load += MainForm_Load;
             ResumeLayout(false);
