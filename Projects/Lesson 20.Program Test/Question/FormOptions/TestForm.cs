@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Text.Json;
-using System.Windows.Forms;
 
 namespace FormOptions
 {
@@ -16,6 +11,13 @@ namespace FormOptions
         // Логіка тесту
         private int currentQuestionIndex = 0;
         private int score = 0;
+
+        // Таймер
+        private System.Windows.Forms.Timer testTimer;
+        private int totalTimeSeconds = 150; // 5 хвилин на весь тест
+        private int timePerQuestionSeconds = 30; // 60 секунд на питання
+        private int remainingTimeTotal;
+        private int remainingTimeQuestion;
 
         private List<Question> questions = new List<Question>
         {
@@ -50,6 +52,75 @@ namespace FormOptions
             rdBtnAnswer2.CheckedChanged += AnyRadioButton_CheckedChanged;
             rdBtnAnswer3.CheckedChanged += AnyRadioButton_CheckedChanged;
             rdBtnAnswer4.CheckedChanged += AnyRadioButton_CheckedChanged;
+            // Ініціалізація таймера
+            testTimer = new System.Windows.Forms.Timer();
+            testTimer.Interval = 1000; // 1 секунда
+            testTimer.Tick += TestTimer_Tick;
+        }
+
+        private void TestTimer_Tick(object sender, EventArgs e)
+        {
+            remainingTimeTotal--;
+            remainingTimeQuestion--;
+
+            // Оновлюємо дисплей часу
+            UpdateTimeDisplay();
+
+            // Час закінчився на питання
+            if (remainingTimeQuestion <= 0)
+            {
+                remainingTimeQuestion = timePerQuestionSeconds;
+                btnCont_Click(null, null); // Автоматично переходимо на наступне питання
+            }
+
+            // Час закінчився на весь тест
+            if (remainingTimeTotal <= 0)
+            {
+                testTimer.Stop();
+                MessageBox.Show($"Час вийшов! " +
+                    $"Правильних відповідей: " +
+                    $"{score} з {questions.Count}", "Результат");
+                RestartTest();
+            }
+        }
+
+
+        private void UpdateTimeDisplay()
+        {
+            // Форматування часу: MM:SS
+            int minutesTotal = remainingTimeTotal / 60;
+            int secondsTotal = remainingTimeTotal % 60;
+
+            int minutesQuestion = remainingTimeQuestion / 60;
+            int secondsQuestion = remainingTimeQuestion % 60;
+
+            // Встановлюємо текст для лейблів (якщо вони створені)
+            if (lbTimerQuestion != null)
+                lbTimerQuestion.Text = $"Час на питання: {minutesQuestion:D2}:{secondsQuestion:D2}";
+
+            if (lbTimerTotal != null)
+                lbTimerTotal.Text = $"Загальний час: {minutesTotal:D2}:{secondsTotal:D2}";
+
+            // Змінюємо колір часу залежно від часу, що залишився
+            if (remainingTimeQuestion <= 10 && lbTimerQuestion != null)
+                lbTimerQuestion.ForeColor = Color.Red; // Червоний, коли мало часу
+            else if (lbTimerQuestion != null)
+                lbTimerQuestion.ForeColor = Color.Green;
+
+            if (remainingTimeTotal <= 30 && lbTimerTotal != null)
+                lbTimerTotal.ForeColor = Color.Red;
+            else if (lbTimerTotal != null)
+                lbTimerTotal.ForeColor = Color.Green;
+        }
+
+        private void RestartTest()
+        {
+            currentQuestionIndex = 0;
+            score = 0;
+            remainingTimeTotal = totalTimeSeconds;
+            remainingTimeQuestion = timePerQuestionSeconds;
+            DisplayQuestion();
+            testTimer.Start();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -63,7 +134,13 @@ namespace FormOptions
 
             LoadSettings();
             ApplyTheme();
+
+            // Ініціалізація часу
+            remainingTimeTotal = totalTimeSeconds;
+            remainingTimeQuestion = timePerQuestionSeconds;
+
             DisplayQuestion();
+            testTimer.Start();
         }
 
         private void DisplayQuestion()

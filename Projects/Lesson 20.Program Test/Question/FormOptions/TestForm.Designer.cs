@@ -36,6 +36,8 @@
             rdBtnAnswer2 = new RadioButton();
             rdBtnAnswer3 = new RadioButton();
             rdBtnAnswer4 = new RadioButton();
+            lbTimerQuestion = new Label();
+            lbTimerTotal = new Label();
             SuspendLayout();
             // 
             // btnChangeStyles
@@ -144,12 +146,37 @@
             rdBtnAnswer4.Text = "Підписання Пакту Молотова-Ріббентропа";
             rdBtnAnswer4.UseVisualStyleBackColor = true;
             // 
+            // lbTimerQuestion
+            // 
+            lbTimerQuestion.AutoSize = true;
+            lbTimerQuestion.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lbTimerQuestion.ForeColor = Color.Green;
+            lbTimerQuestion.Location = new Point(17, 360);
+            lbTimerQuestion.Name = "lbTimerQuestion";
+            lbTimerQuestion.Size = new Size(242, 30);
+            lbTimerQuestion.TabIndex = 9;
+            lbTimerQuestion.Text = "Час на питання: 00:30";
+            // 
+            // lbTimerTotal
+            // 
+            lbTimerTotal.AutoSize = true;
+            lbTimerTotal.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lbTimerTotal.ForeColor = Color.Green;
+            lbTimerTotal.Location = new Point(17, 395);
+            lbTimerTotal.Name = "lbTimerTotal";
+            lbTimerTotal.Size = new Size(267, 30);
+            lbTimerTotal.TabIndex = 10;
+            lbTimerTotal.Text = "Загальний час: 02:30";
+
+            // 
             // TestForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1061, 532);
+            Controls.Add(lbTimerTotal);
+            Controls.Add(lbTimerQuestion);
             Controls.Add(rdBtnAnswer4);
             Controls.Add(rdBtnAnswer3);
             Controls.Add(rdBtnAnswer2);
@@ -178,5 +205,7 @@
         private RadioButton rdBtnAnswer2;
         private RadioButton rdBtnAnswer3;
         private RadioButton rdBtnAnswer4;
+        private Label lbTimerQuestion;
+        private Label lbTimerTotal;
     }
 }
