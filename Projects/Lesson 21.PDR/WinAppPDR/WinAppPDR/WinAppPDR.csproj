@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="CreateQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="images\q10.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
